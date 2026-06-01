@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="docs/banner.svg" alt="tickmac" width="100%">
+  <img src="docs/banner.svg" alt="tapeline" width="100%">
 </p>
 
 <p align="center">
-  <a href="https://github.com/tylrcc/tickmac/actions/workflows/ci.yml"><img src="https://github.com/tylrcc/tickmac/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/tylrcc/tapeline/actions/workflows/ci.yml"><img src="https://github.com/tylrcc/tapeline/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/status-alpha-orange" alt="status">
   <img src="https://img.shields.io/badge/rtl-Verilog%202005-blue" alt="rtl">
   <img src="https://img.shields.io/badge/sim-Icarus%20Verilog-9cf" alt="sim">
@@ -11,10 +11,10 @@
   <img src="https://img.shields.io/badge/tooling-MIT-green" alt="software license">
 </p>
 
-# tickmac
+# tapeline
 
-A small FPGA IP core that computes rolling moving averages and VWAP over a live
-tick stream, so the python strategy doesn't have to do it on every print.
+A small piece of FPGA hardware that works out live price averages (a moving
+average and VWAP) as trades come in, so the trading software doesn't have to.
 
 The Python side of my trading stack is fine at deciding *what* to do, but
 recomputing rolling windows on the hot path in software burns time I don't have
@@ -43,7 +43,7 @@ own machine, and CI runs it on every push.
 ## The idea in one paragraph
 
 A naive moving average re-sums the whole window on every tick. That is `O(N)` per
-tick and it scales badly when you want a long lookback at line rate. tickmac
+tick and it scales badly when you want a long lookback at line rate. tapeline
 keeps running accumulators instead and slides them one tick at a time: add the
 new sample, drop the one rolling off the back. That is `O(1)` per tick no matter
 how long the window is. The same trick gives you VWAP for free by carrying two
@@ -55,8 +55,8 @@ fixed point and not wrapping the accumulator.
 You do not need an FPGA to run this. The whole thing simulates.
 
 ```bash
-git clone https://github.com/tylrcc/tickmac
-cd tickmac
+git clone https://github.com/tylrcc/tapeline
+cd tapeline
 
 # python golden-model tests, no fpga tools needed
 make test
@@ -107,7 +107,7 @@ knows where the binary point sits.
 ## Layout
 
 ```
-tickmac/
+tapeline/
 ├── rtl/
 │   ├── mac_engine.v        rolling SMA + VWAP, the actual core
 │   └── tick_sync_fifo.v    host-boundary fifo, gives real backpressure
@@ -144,12 +144,12 @@ I would rather list the holes than pretend they are not there:
 
 ## Roadmap
 
-- [ ] register the multiplier, pipeline the accumulator update for fmax ([#1](https://github.com/tylrcc/tickmac/issues/1))
-- [ ] Newton-Raphson reciprocal to replace the divide ([#2](https://github.com/tylrcc/tickmac/issues/2))
-- [ ] async fifo for the PCIe clock crossing ([#3](https://github.com/tylrcc/tickmac/issues/3))
-- [ ] AXI4-Lite register block + a minimal host driver ([#4](https://github.com/tylrcc/tickmac/issues/4))
-- [ ] real recorded tick tapes in the vector set ([#5](https://github.com/tylrcc/tickmac/issues/5))
-- [ ] EMA core, the multiply-add cousin of this one ([#6](https://github.com/tylrcc/tickmac/issues/6))
+- [ ] register the multiplier, pipeline the accumulator update for fmax ([#1](https://github.com/tylrcc/tapeline/issues/1))
+- [ ] Newton-Raphson reciprocal to replace the divide ([#2](https://github.com/tylrcc/tapeline/issues/2))
+- [ ] async fifo for the PCIe clock crossing ([#3](https://github.com/tylrcc/tapeline/issues/3))
+- [ ] AXI4-Lite register block + a minimal host driver ([#4](https://github.com/tylrcc/tapeline/issues/4))
+- [ ] real recorded tick tapes in the vector set ([#5](https://github.com/tylrcc/tapeline/issues/5))
+- [ ] EMA core, the multiply-add cousin of this one ([#6](https://github.com/tylrcc/tapeline/issues/6))
 
 ## Contributing
 

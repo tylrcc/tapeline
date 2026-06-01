@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260" role="img" aria-label="tickmac">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260" role="img" aria-label="tapeline">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#0b0f14"/>
@@ -27,6 +27,6 @@
   <polyline fill="none" stroke="url(#acc)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
     points="60,165 150,158 250,150 350,142 450,136 560,130 660,126 760,124 860,123 960,124 1060,126 1120,128"/>
 
-  <text x="60" y="90" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="64" font-weight="700" fill="#e8eef4" letter-spacing="2">tickmac</text>
+  <text x="60" y="90" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="64" font-weight="700" fill="#e8eef4" letter-spacing="2">tapeline</text>
   <text x="64" y="120" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="20" fill="#7d8a98">rolling SMA and VWAP on a tick stream, in hardware</text>
 </svg>

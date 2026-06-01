@@ -56,7 +56,7 @@ def load_font(size):
 FONT = load_font(FONT_SIZE)
 
 # prompt shown before the command and at the end
-PROMPT = [("~/tickmac", CYAN), (" $ ", DIM)]
+PROMPT = [("~/tapeline", CYAN), (" $ ", DIM)]
 CMD = "make sim"
 DASH = "-" * 47
 
@@ -83,7 +83,7 @@ def base_frame():
     for i, c in enumerate((DOT_R, DOT_Y, DOT_G)):
         cx = 22 + i * 22
         d.ellipse([cx - 6, TITLE_H // 2 - 6, cx + 6, TITLE_H // 2 + 6], fill=c)
-    title = "make sim  -  tickmac"
+    title = "make sim  -  tapeline"
     tw = d.textlength(title, font=FONT)
     d.text(((W - tw) / 2, TITLE_H / 2 - FONT_SIZE / 2), title, font=FONT, fill=DIM)
     return img
@@ -184,7 +184,7 @@ def main():
         print("ffmpeg not found, skipping mp4")
         return
 
-    tmp = tempfile.mkdtemp(prefix="tickmac_demo_")
+    tmp = tempfile.mkdtemp(prefix="tapeline_demo_")
     try:
         for i, f in enumerate(frames):
             f.save(os.path.join(tmp, "f%05d.png" % i))

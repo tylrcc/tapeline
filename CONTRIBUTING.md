@@ -20,8 +20,8 @@ welcome.
 ## Getting set up
 
 ```bash
-git clone https://github.com/tylrcc/tickmac
-cd tickmac
+git clone https://github.com/tylrcc/tapeline
+cd tapeline
 make test      # python golden-model tests, no fpga tools needed
 make sim       # full rtl sim, needs iverilog
 ```
