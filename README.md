@@ -144,12 +144,12 @@ I would rather list the holes than pretend they are not there:
 
 ## Roadmap
 
-- [ ] register the multiplier, pipeline the accumulator update for fmax
-- [ ] Newton-Raphson reciprocal to replace the divide
-- [ ] async fifo for the PCIe clock crossing
-- [ ] AXI4-Lite register block + a minimal host driver
-- [ ] EMA core (the multiply-add cousin of this one)
-- [ ] real recorded tick tapes in the vector set
+- [ ] register the multiplier, pipeline the accumulator update for fmax ([#1](https://github.com/tylrcc/tickmac/issues/1))
+- [ ] Newton-Raphson reciprocal to replace the divide ([#2](https://github.com/tylrcc/tickmac/issues/2))
+- [ ] async fifo for the PCIe clock crossing ([#3](https://github.com/tylrcc/tickmac/issues/3))
+- [ ] AXI4-Lite register block + a minimal host driver ([#4](https://github.com/tylrcc/tickmac/issues/4))
+- [ ] real recorded tick tapes in the vector set ([#5](https://github.com/tylrcc/tickmac/issues/5))
+- [ ] EMA core, the multiply-add cousin of this one ([#6](https://github.com/tylrcc/tickmac/issues/6))
 
 ## Contributing
 
