@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 260" width="1200" height="260" role="img" aria-label="tickmac">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0f14"/>
+      <stop offset="1" stop-color="#11161d"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3ddc97"/>
+      <stop offset="1" stop-color="#36c2e0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="260" fill="url(#bg)"/>
+
+  <!-- faint grid -->
+  <g stroke="#1b2430" stroke-width="1">
+    <line x1="0" y1="65"  x2="1200" y2="65"/>
+    <line x1="0" y1="130" x2="1200" y2="130"/>
+    <line x1="0" y1="195" x2="1200" y2="195"/>
+  </g>
+
+  <!-- jagged tick stream -->
+  <polyline fill="none" stroke="#2b6b5e" stroke-width="2" opacity="0.7"
+    points="60,170 110,150 150,185 200,120 250,160 300,95 350,140 400,110 450,165 500,100 560,150 610,90 660,135 710,105 760,150 810,95 860,140 910,110 960,160 1010,120 1060,150 1120,130"/>
+
+  <!-- smoothed moving average line -->
+  <polyline fill="none" stroke="url(#acc)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"
+    points="60,165 150,158 250,150 350,142 450,136 560,130 660,126 760,124 860,123 960,124 1060,126 1120,128"/>
+
+  <text x="60" y="90" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="64" font-weight="700" fill="#e8eef4" letter-spacing="2">tickmac</text>
+  <text x="64" y="120" font-family="ui-monospace,Menlo,Consolas,monospace" font-size="20" fill="#7d8a98">rolling SMA and VWAP on a tick stream, in hardware</text>
+</svg>

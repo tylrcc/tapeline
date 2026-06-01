@@ -1,0 +1,44 @@
+tickmac - Dual License
+======================
+
+This project uses two licenses, which is the normal split for open hardware:
+
+1. HARDWARE & DOCUMENTATION  ->  CERN-OHL-P v2 (Permissive)
+   Applies to: the Verilog RTL under rtl/ and the design docs under docs/.
+
+2. SOFTWARE & TOOLING  ->  MIT (see LICENSE-MIT)
+   Applies to: the golden model and tooling under sim/, the host helpers under
+   host/, the Makefile, and CI scripts.
+
+----------------------------------------------------------------------
+CERN Open Hardware Licence Version 2 - Permissive (CERN-OHL-P v2)
+----------------------------------------------------------------------
+
+Copyright (C) 2026 tuwfy.
+
+This source describes Open Hardware and is licensed under the CERN-OHL-P v2.
+
+You may redistribute and modify this source and make products using it under
+the terms of the CERN-OHL-P v2 (https://ohwr.org/cern_ohl_p_v2.txt).
+
+This source is distributed WITHOUT ANY EXPRESS OR IMPLIED WARRANTY, INCLUDING OF
+MERCHANTABILITY, SATISFACTORY QUALITY AND FITNESS FOR A PARTICULAR PURPOSE.
+Please see the CERN-OHL-P v2 for applicable conditions.
+
+The full text of the CERN-OHL-P v2 is available at:
+    https://ohwr.org/cern_ohl_p_v2.txt
+
+----------------------------------------------------------------------
+Why two licenses?
+----------------------------------------------------------------------
+Hardware and software have different reuse and liability concerns. CERN-OHL-P is
+purpose-built for hardware sources and clearly defines terms like "Product" and
+"Source"; MIT is the most frictionless choice for the model and tooling, so
+anyone can drop the engine into their own stack without ceremony.
+
+----------------------------------------------------------------------
+Not financial advice
+----------------------------------------------------------------------
+This is a hardware research project. It computes moving averages, it does not
+make trading decisions and it makes no promises about money. Trading is risky.
+Use it at your own risk, and read the warranty disclaimer above twice.

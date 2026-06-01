@@ -1,0 +1,27 @@
+# sim build output
+build/
+*.vvp
+*.vcd
+*.fst
+
+# generated test vectors, regenerate with `make vectors`
+sim/vectors.txt
+
+# python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# fpga toolchain junk
+.Xil/
+*.jou
+*.log
+*.bit
+*.ltx
+vivado*.str
+.vivado/
+
+# os / editor
+.DS_Store
+.vscode/
+.idea/

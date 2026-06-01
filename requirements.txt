@@ -1,0 +1,7 @@
+# the golden model and host helpers are pure stdlib python, nothing to install
+# there. this is only the dev/test tooling.
+pytest>=7.0
+
+# system deps (not pip-installable, install with your package manager):
+#   iverilog   - icarus verilog, builds and runs the testbench
+#   gtkwave    - optional, only if you want to stare at waveforms
