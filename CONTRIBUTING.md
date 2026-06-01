@@ -20,8 +20,8 @@ welcome.
 ## Getting set up
 
 ```bash
-git clone <this-repo>
-cd hw_accelerator
+git clone https://github.com/tylrcc/tickmac
+cd tickmac
 make test      # python golden-model tests, no fpga tools needed
 make sim       # full rtl sim, needs iverilog
 ```

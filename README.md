@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://github.com/tylrcc/tickmac/actions/workflows/ci.yml"><img src="https://github.com/tylrcc/tickmac/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/status-alpha-orange" alt="status">
   <img src="https://img.shields.io/badge/rtl-Verilog%202005-blue" alt="rtl">
   <img src="https://img.shields.io/badge/sim-Icarus%20Verilog-9cf" alt="sim">
@@ -42,8 +43,8 @@ fixed point and not wrapping the accumulator.
 You do not need an FPGA to run this. The whole thing simulates.
 
 ```bash
-git clone <this-repo>
-cd hw_accelerator
+git clone https://github.com/tylrcc/tickmac
+cd tickmac
 
 # python golden-model tests, no fpga tools needed
 make test
@@ -94,7 +95,7 @@ knows where the binary point sits.
 ## Layout
 
 ```
-hw_accelerator/
+tickmac/
 ├── rtl/
 │   ├── mac_engine.v        rolling SMA + VWAP, the actual core
 │   └── tick_sync_fifo.v    host-boundary fifo, gives real backpressure
