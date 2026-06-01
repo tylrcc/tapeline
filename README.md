@@ -28,6 +28,18 @@ host running the strategy, as an execution co-processor.
 computes numbers, it does not make trading decisions. Do not point it at a live
 account and walk away.
 
+## See it run
+
+<p align="center">
+  <img src="docs/demo.gif" alt="make sim regenerating the golden vectors, compiling the rtl, and the self-checking testbench passing 4000 ticks with 0 errors" width="100%">
+</p>
+
+That is the real flow: `make sim` regenerates the golden vectors from the Python
+model, compiles the RTL with Icarus, and replays the tape through the testbench.
+4000 ticks, 0 mismatches against the model. There is a short
+[mp4 of the same run](docs/demo.mp4) too. You get the identical result on your
+own machine, and CI runs it on every push.
+
 ## The idea in one paragraph
 
 A naive moving average re-sums the whole window on every tick. That is `O(N)` per
@@ -110,6 +122,8 @@ tickmac/
 ├── docs/
 │   ├── interface.md        stream contract + register map
 │   └── architecture.md     datapath, fixed point, timing
+├── tools/
+│   └── render_demo.py      renders the demo gif/mp4 above
 └── Makefile                make test / make sim / make lint
 ```
 
